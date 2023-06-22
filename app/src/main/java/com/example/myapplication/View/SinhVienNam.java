@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -15,11 +16,10 @@ import com.example.myapplication.Database.DatabaseHandler;
 import com.example.myapplication.Model.SinhVien;
 import com.example.myapplication.Model.SinhVienAdapter;
 import com.example.myapplication.R;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class ShowListSinhVien extends AppCompatActivity {
+public class SinhVienNam extends AppCompatActivity {
     private ArrayList<SinhVien> studentList;
     private DatabaseHandler db;
     private SinhVienAdapter sinhVienAdapter;
@@ -33,22 +33,20 @@ public class ShowListSinhVien extends AppCompatActivity {
         setContentView(R.layout.list_sinh_vien);
 
 
-
         button = findViewById(R.id.sinhVienVeMenu);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ShowListSinhVien.this, MainActivity.class);
+                Intent intent = new Intent(SinhVienNam.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
 
-
         db = new DatabaseHandler(getBaseContext());
         SQLiteDatabase sql = db.getReadableDatabase();
         ArrayList<SinhVien> studentList = new ArrayList<>();
-        String query = "SELECT * FROM SinhVien";
+        String query = "SELECT * FROM SinhVien where name ='nam' and (namHoc ='nam 2' or namHoc ='năm 2')";
         Cursor cursor = sql.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
             do {

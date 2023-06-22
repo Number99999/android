@@ -36,13 +36,7 @@ public class AddSinhVien extends AppCompatActivity {
             public void onClick(View v) {
                 SinhVien sv = new SinhVien(ten.getText().toString(), namSinh.getText().toString(), que.getText().toString(), namHoc.getText().toString());
                 db.addSinhVien(sv);
-
-
-                Gson gson = new Gson();
-
-                String svToJson = gson.toJson(sv);
                 Intent intent = new Intent(AddSinhVien.this, ShowListSinhVien.class);
-                intent.putExtra("sv", svToJson);
                 startActivity(intent);
             }
         });

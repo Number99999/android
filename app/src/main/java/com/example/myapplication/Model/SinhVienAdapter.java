@@ -57,6 +57,4 @@ public class SinhVienAdapter extends BaseAdapter {
         txtYear.setText(sv.getNamHoc());
         return convertView;
     }
-
-
 }

@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".View.ShowListSinhVien" />
+        <activity android:name=".View.ShowListLop" />
         <activity android:name=".View.AddSinhVien" />
+        <activity android:name=".View.AddLopHoc" />
+        <activity android:name=".View.SinhVienNam" />
     </application>
 
 </manifest>

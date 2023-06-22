@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnAddClass;
     private Button btnListSV;
     private Button btnListClass;
-
+    private Button btnFilSV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnAddClass = findViewById(R.id.btnAddClass);
         btnListSV = findViewById(R.id.btnListSV);
         btnListClass = findViewById(R.id.btnListClass);
+        btnFilSV = findViewById(R.id.btnSVNam);
 
         btnAddSV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +45,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ShowListSinhVien.class);
-//                intent.putExtra("sinhVien", )
                 startActivity(intent);
             }
         });
 
-        this.databaseHandler = new DatabaseHandler(this);
+        btnListClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShowListLop.class);
+                startActivity(intent);
+            }
+        });
 
+        btnAddClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddLopHoc.class);
+                startActivity(intent);
+            }
+        });
+
+        btnFilSV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SinhVienNam.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -19,6 +19,14 @@ public class SinhVien {
         this.namHoc = namHoc;
     }
 
+    public SinhVien(int id, String name, String date, String queQuan, String namHoc) {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.queQuan = queQuan;
+        this.namHoc = namHoc;
+    }
+
     public int getId() {
         return id;
     }
