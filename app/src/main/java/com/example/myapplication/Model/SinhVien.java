@@ -1,5 +1,8 @@
 package com.example.myapplication.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class SinhVien {
     private int id;
     private String name;
@@ -7,6 +10,13 @@ public class SinhVien {
     private String queQuan, namHoc;
 
     public SinhVien() {
+    }
+
+    public SinhVien(String name, String date, String queQuan, String namHoc) {
+        this.name = name;
+        this.date = date;
+        this.queQuan = queQuan;
+        this.namHoc = namHoc;
     }
 
     public int getId() {
